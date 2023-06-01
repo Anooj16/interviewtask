@@ -1,0 +1,66 @@
+<%- include ('../layouts/header.ejs') %>
+
+<h1 class="row d-flex align-items-center justify-content-center h-100 mt-5">
+  Login User
+</h1>
+
+<% if(typeof message !=='undefined' ){ %>
+<h4 class="text-danger"style="text-align: center;"><%= message %></h4>
+<% } %>
+
+<section style="width: 100%">
+  <div class="container-fluid mt-5">
+    <div class="row d-flex align-items-center justify-content-center h-100">
+      <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+        <form action="/login" method="post">
+          <!-- Email input -->
+          <div class="form-outline mb-4">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form-control form-control-lg"
+              required
+            />
+            <label class="form-label" for="email">Email address</label>
+          </div>
+
+          <!-- Password input -->
+          <div class="form-outline mb-4">
+            <input
+              type="password"
+              id="password"
+              class="form-control form-control-lg"
+              name="password"
+              required
+            />
+            <label class="form-label" for="password">Password</label>
+          </div>
+
+          <div
+            class="d-flex justify-content-around align-items-center mb-4"
+          ></div>
+
+          <!-- Submit button -->
+          <button
+            type="submit"
+            class="btn btn-primary btn-lg btn-block align-items-center"
+            value="Login"
+          >
+            Login
+          </button>
+          <a href="/register">Don't have a account?, Register</a>
+          <br />
+          <br />
+          <a href="../admin/login.ejs">Admin Login</a>
+
+          <div class="divider d-flex align-items-center my-4">
+            <p class="text-center fw-bold mx-3 mb-0 text-muted"></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include ('../layouts/footer.ejs') %>
